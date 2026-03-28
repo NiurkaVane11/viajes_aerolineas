@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+  --negro: #040926;
+  --carbon: #251351;
+  --carbon-medio: #7D2E68;
+  --carbon-claro: #A85751;
+  --acento: #C97B84;
+  --acento-claro: #e0a8b0;
+  --dorado: #e8c97a;
+  --blanco: #f5eef0;
+  --gris: #b89aa0;
+  --sombra-acento: 0 0 30px rgba(201, 123, 132, 0.2);
+  --sombra-card: 0 12px 40px rgba(4, 9, 38, 0.5);
+  --radio: 16px;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--negro);
+  color: var(--blanco);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(4, 9, 38, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 123, 132, 0.15);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--acento);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: var(--gris);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--acento);
+}
+
+/* ===== SECCIÓN INICIO ===== */
+#inicio {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(125, 46, 104, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 123, 132, 0.1) 0%, transparent 50%),
+    var(--negro);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 750px;
+  margin-bottom: 4rem;
+  animation: fadeUp 0.9s ease both;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  color: var(--blanco);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+}
+
+.hero-subtitulo {
+  font-size: 1.2rem;
+  color: var(--acento-claro);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.hero-descripcion {
+  color: var(--gris);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.btn-hero {
+  display: inline-block;
+  background: var(--acento);
+  color: var(--negro);
+  text-decoration: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201, 123, 132, 0.45);
+}
+
+/* ===== BUSCADOR ===== */
+.buscador {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(37, 19, 81, 0.8);
+  border: 1px solid rgba(201, 123, 132, 0.2);
+  border-radius: var(--radio);
+  padding: 2.5rem;
+  box-shadow: var(--sombra-card);
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.buscador h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--blanco);
+  text-align: left;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+select,
+input[type="date"],
+input[type="number"] {
+  background: rgba(4, 9, 38, 0.6);
+  border: 1px solid rgba(201, 123, 132, 0.2);
+  border-radius: 10px;
+  color: var(--blanco);
+  padding: 0.8rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+  width: 100%;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px rgba(201, 123, 132, 0.15);
+}
+
+select option {
+  background: var(--carbon);
+}
+
+.btn-buscar {
+  width: 100%;
+  background: linear-gradient(135deg, var(--carbon-medio), var(--acento));
+  color: var(--blanco);
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-buscar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 123, 132, 0.4);
+}
+
+/* ===== SECCIÓN VIAJES ===== */
+#viajes {
+  padding: 6rem 4rem;
+  background:
+    radial-gradient(ellipse at 70% 80%, rgba(125, 46, 104, 0.12) 0%, transparent 60%),
+    var(--carbon);
+}
+
+.seccion-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--blanco);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.seccion-subtitulo {
+  text-align: center;
+  color: var(--gris);
+  font-size: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+/* ===== GRID DE TARJETAS ===== */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta {
+  background: rgba(4, 9, 38, 0.6);
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: 1px solid rgba(201, 123, 132, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  animation: fadeUp 0.6s ease both;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-acento), var(--sombra-card);
+  border-color: rgba(201, 123, 132, 0.35);
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--carbon-medio);
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.tarjeta:hover .tarjeta-imagen img {
+  transform: scale(1.06);
+}
+
+.tarjeta-info {
+  padding: 1.5rem;
+}
+
+.tarjeta-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blanco);
+  margin-bottom: 0.2rem;
+}
+
+.pais {
+  font-size: 0.85rem;
+  color: var(--acento);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.ruta {
+  font-size: 0.8rem;
+  color: var(--gris);
+  background: rgba(37, 19, 81, 0.8);
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.3px;
+}
+
+.frecuencia {
+  font-size: 0.8rem;
+  color: var(--gris);
+  margin-bottom: 0.8rem;
+}
+
+.descripcion {
+  font-size: 0.9rem;
+  color: var(--gris);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.precio {
+  font-size: 0.9rem;
+  color: var(--blanco);
+  font-weight: 400;
+}
+
+.precio span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dorado);
+}
+
+/* ===== SECCIÓN CONTACTO ===== */
+#contacto {
+  padding: 6rem 4rem;
+  background: var(--negro);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== SERVICIOS ===== */
+.servicios-lista {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.servicios-lista li {
+  padding: 0.9rem 0 0.9rem 2rem;
+  position: relative;
+  color: var(--blanco);
+  border-bottom: 1px solid rgba(201, 123, 132, 0.1);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.servicios-lista li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--acento);
+  font-size: 0.6rem;
+  top: 1.1rem;
+}
+
+/* ===== CONTACTO INFO ===== */
+.contacto-datos {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contacto-datos p {
+  font-size: 1rem;
+  color: var(--gris);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contacto-datos strong {
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(201, 123, 132, 0.1);
+  color: var(--gris);
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tarjeta:nth-child(1) { animation-delay: 0.05s; }
+.tarjeta:nth-child(2) { animation-delay: 0.1s; }
+.tarjeta:nth-child(3) { animation-delay: 0.15s; }
+.tarjeta:nth-child(4) { animation-delay: 0.2s; }
+.tarjeta:nth-child(5) { animation-delay: 0.25s; }
+.tarjeta:nth-child(6) { animation-delay: 0.3s; }
+.tarjeta:nth-child(7) { animation-delay: 0.35s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  #navbar { padding: 1rem 2rem; }
+  #inicio, #viajes { padding: 7rem 2rem 4rem; }
+  form { grid-template-columns: 1fr 1fr; }
+  #contacto { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { gap: 1.2rem; }
+  form { grid-template-columns: 1fr; }
+  .buscador { padding: 1.5rem; }
+  .destinos-grid { grid-template-columns: 1fr; }
+  #inicio { padding: 6rem 1.5rem 3rem; }
+  #viajes { padding: 4rem 1.5rem; }
+}
