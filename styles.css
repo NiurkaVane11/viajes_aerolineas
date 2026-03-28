@@ -459,3 +459,15 @@ footer {
   #inicio { padding: 6rem 1.5rem 3rem; }
   #viajes { padding: 4rem 1.5rem; }
 }
+
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
