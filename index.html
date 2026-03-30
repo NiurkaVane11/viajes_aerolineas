@@ -1,138 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8"/>
-  <title>AeroMaravillas – Rutas a las 7 Maravillas del Mundo</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AeroMaravillas – Rutas a las 7 Maravillas</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="nav-logo">
+        <img src="images/logo.png" alt="Logo" class="logo-img" />
+        AeroMaravillas
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#viajes">Viajes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <h1>AeroMaravillas &#9992;</h1>
-  <p>La aerolínea oficial de las 7 Maravillas del Mundo. Salimos desde Quito (UIO) y Guayaquil (GYE).</p>
+    <section id="inicio">
+      <div class="hero-content">
+        <h1>AeroMaravillas &#9992;</h1>
+        <p class="hero-subtitulo">La aerolínea oficial de las 7 Maravillas del Mundo.</p>
+        <p class="hero-descripcion">
+          Salimos desde Quito (UIO) y Guayaquil (GYE) hacia los destinos más extraordinarios del planeta.
+        </p>
+        <a href="#viajes" class="btn-hero">Ver destinos</a>
+      </div>
 
-  <hr/>
+      <div class="buscador">
+        <h2>Buscar un Vuelo</h2>
+        <form>
+          <div class="form-grupo">
+            <label for="origen">Origen</label>
+            <select id="origen" name="origen">
+              <option>Quito (UIO)</option>
+              <option>Guayaquil (GYE)</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label for="destino">Destino</label>
+            <select id="destino" name="destino">
+              <option>Machu Picchu - Peru</option>
+              <option>Chichen Itza - Mexico</option>
+              <option>Cristo Redentor - Brasil</option>
+              <option>Coliseo Romano - Italia</option>
+              <option>Taj Mahal - India</option>
+              <option>Gran Muralla China</option>
+              <option>Petra - Jordania</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label for="fecha">Fecha de salida</label>
+            <input type="date" id="fecha" name="fecha" />
+          </div>
+          <div class="form-grupo">
+            <label for="pasajeros">Pasajeros</label>
+            <input type="number" id="pasajeros" name="pasajeros" min="1" max="10" value="1" />
+          </div>
+          <button type="button" class="btn-buscar" onclick="realizarReserva()">Buscar vuelo</button>
+        </form>
+      </div>
+    </section>
 
-  <h2>Nuestras Rutas</h2>
+    <section id="viajes">
+      <h2 class="seccion-titulo">Nuestros Destinos</h2>
+      <p class="seccion-subtitulo">7 maravillas. 7 experiencias unicas.</p>
+      <div class="destinos-grid">
+        <div class="tarjeta">
+          <div class="tarjeta-imagen"><img src="images/macchu-picchu.jpeg" alt="Machu Picchu" /></div>
+          <div class="tarjeta-info">
+            <h3>Machu Picchu</h3>
+            <p class="pais">Peru</p>
+            <p class="ruta">UIO &rarr; LIM &rarr; CUZ | 9h 30m</p>
+            <p class="precio">Desde <span>$180</span></p>
+            <button class="btn-hero" style="width:100%; margin-top:10px" onclick="seleccionarDestino('Machu Picchu')">Reservar</button>
+          </div>
+        </div>
+        </div>
+    </section>
 
-  <h3>1. Machu Picchu &ndash; Per&uacute;</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; LIM &rarr; CUZ</p>
-  <p><strong>Duraci&oacute;n:</strong> 9h 30m</p>
-  <p><strong>Frecuencia:</strong> Martes y Viernes</p>
-  <p><strong>Precio desde:</strong> $180 por persona</p>
-  <p>La ciudad perdida de los incas entre las nubes de los Andes peruanos. Patrimonio de la Humanidad.</p>
+    <section id="contacto">
+      <div class="contacto-info">
+        <h2 class="seccion-titulo">Contáctanos</h2>
+        <p><strong>Teléfono:</strong> +593 994115408</p>
+        <p><strong>Correo:</strong> info@aeromaravillas.com</p>
+        <p><strong>Dirección:</strong> Av. 6 de Marzo y Venezuela, Guayaquil, Ecuador</p>
+      </div>
+    </section>
 
-  <hr/>
+    <footer>
+      <p>&copy; 2026 AeroMaravillas. Todos los derechos reservados.</p>
+    </footer>
 
-  <h3>2. Chich&eacute;n Itz&aacute; &ndash; M&eacute;xico</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; MEX &rarr; MID</p>
-  <p><strong>Duraci&oacute;n:</strong> 8h 15m</p>
-  <p><strong>Frecuencia:</strong> Lunes y Jueves</p>
-  <p><strong>Precio desde:</strong> $320 por persona</p>
-  <p>El imponente Templo de Kukulc&aacute;n, joya de la civilizaci&oacute;n maya en la pen&iacute;nsula de Yucat&aacute;n.</p>
-
-  <hr/>
-
-  <h3>3. Cristo Redentor &ndash; Brasil</h3>
-  <p><strong>Ruta:</strong> GYE &rarr; GIG</p>
-  <p><strong>Duraci&oacute;n:</strong> 5h 45m</p>
-  <p><strong>Frecuencia:</strong> Mi&eacute;rcoles y S&aacute;bado</p>
-  <p><strong>Precio desde:</strong> $210 por persona</p>
-  <p>El ic&oacute;nico Cristo de brazos abiertos sobre R&iacute;o de Janeiro, s&iacute;mbolo de Brasil y del mundo.</p>
-
-  <hr/>
-
-  <h3>4. Coliseo Romano &ndash; Italia</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; MAD &rarr; FCO</p>
-  <p><strong>Duraci&oacute;n:</strong> 14h 20m</p>
-  <p><strong>Frecuencia:</strong> Lunes, Mi&eacute;rcoles y Viernes</p>
-  <p><strong>Precio desde:</strong> $590 por persona</p>
-  <p>El anfiteatro m&aacute;s grande jam&aacute;s construido. El coraz&oacute;n hist&oacute;rico de Roma, Italia.</p>
-
-  <hr/>
-
-  <h3>5. Taj Mahal &ndash; India</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; DXB &rarr; DEL</p>
-  <p><strong>Duraci&oacute;n:</strong> 22h 10m</p>
-  <p><strong>Frecuencia:</strong> Martes y S&aacute;bado</p>
-  <p><strong>Precio desde:</strong> $750 por persona</p>
-  <p>El eterno mausoleo de m&aacute;rmol blanco en Agra, testimonio supremo del amor del emperador Shah Jahan.</p>
-
-  <hr/>
-
-  <h3>6. Gran Muralla China &ndash; China</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; LAX &rarr; PEK</p>
-  <p><strong>Duraci&oacute;n:</strong> 20h 50m</p>
-  <p><strong>Frecuencia:</strong> Jueves y Domingo</p>
-  <p><strong>Precio desde:</strong> $870 por persona</p>
-  <p>M&aacute;s de 21,000 km de historia y arquitectura milenaria atravesando monta&ntilde;as y desiertos de China.</p>
-
-  <hr/>
-
-  <h3>7. Petra &ndash; Jordania</h3>
-  <p><strong>Ruta:</strong> UIO &rarr; MAD &rarr; AMM</p>
-  <p><strong>Duraci&oacute;n:</strong> 16h 30m</p>
-  <p><strong>Frecuencia:</strong> Mi&eacute;rcoles y S&aacute;bado</p>
-  <p><strong>Precio desde:</strong> $680 por persona</p>
-  <p>La ciudad rosa tallada en roca arenisca en el coraz&oacute;n del desierto jordan&oacute;. Patrimonio UNESCO.</p>
-
-  <hr/>
-
-  <h2>Servicios a Bordo</h2>
-  <ul>
-    <li>Clase Business con asientos lie-flat</li>
-    <li>Men&uacute; gourmet internacional</li>
-    <li>Wi-Fi a bordo</li>
-    <li>Gu&iacute;as de viaje personalizadas</li>
-    <li>Seguro de viaje incluido</li>
-    <li>Cambios de fecha sin costo hasta 48h antes</li>
-  </ul>
-
-  <hr/>
-
-  <h2>Buscar un Vuelo</h2>
-  <form>
-    <p>
-      <label for="origen">Origen:</label><br/>
-      <select id="origen" name="origen">
-        <option>Quito (UIO)</option>
-        <option>Guayaquil (GYE)</option>
-      </select>
-    </p>
-    <p>
-      <label for="destino">Destino:</label><br/>
-      <select id="destino" name="destino">
-        <option>Machu Picchu &ndash; Per&uacute;</option>
-        <option>Chich&eacute;n Itz&aacute; &ndash; M&eacute;xico</option>
-        <option>Cristo Redentor &ndash; Brasil</option>
-        <option>Coliseo Romano &ndash; Italia</option>
-        <option>Taj Mahal &ndash; India</option>
-        <option>Gran Muralla China</option>
-        <option>Petra &ndash; Jordania</option>
-      </select>
-    </p>
-    <p>
-      <label for="fecha">Fecha de salida:</label><br/>
-      <input type="date" id="fecha" name="fecha"/>
-    </p>
-    <p>
-      <label for="pasajeros">N&uacute;mero de pasajeros:</label><br/>
-      <input type="number" id="pasajeros" name="pasajeros" min="1" max="10" value="1"/>
-    </p>
-    <p>
-      <input type="button" value="Buscar vuelo" onclick="realizarReserva()"/>
-    </p>
-  </form>
-
-  <hr/>
-
-  <h2>Cont&aacute;ctanos</h2>
-  <p><strong>Tel&eacute;fono:</strong> +593 994115408</p>
-  <p><strong>Correo:</strong> info@aeromaravillas.com</p>
-  <p><strong>Direcci&oacute;n:</strong> Av. 6 de Marzo y Venezuela, Guayaquil, Ecuador</p>
-
-  <hr/>
-
-  <p>&copy; 2026 AeroMaravillas. Todos los derechos reservados.</p>
-
-</body>
-<script src="script.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
