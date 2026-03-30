@@ -10,7 +10,7 @@ Página web sobre una aerolínea que ofrece vuelos a las 7 Maravillas del Mundo,
 ## Integrantes
 - Jaime Alexis Cusco Ayala – HTML
 - Niurka Vanesa Yupanqui Valente – CSS  
--  – JavaScript
+- Steven Alexander Allauca Valladolid – JavaScript
 
 ## Cómo ver el proyecto
 1. Clonar el repositorio
