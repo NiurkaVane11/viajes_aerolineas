@@ -1,21 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AeroMaravillas</title>
+    <title>AeroMaravillas – Rutas a las 7 Maravillas</title>
     <link rel="icon" type="image/png" href="images/logo.png" />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- ===== NAVBAR ===== -->
     <nav id="navbar">
       <div class="nav-logo">
         <img src="images/logo.png" alt="Logo" class="logo-img" />
         AeroMaravillas
       </div>
-
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#viajes">Viajes</a></li>
@@ -23,21 +20,16 @@
       </ul>
     </nav>
 
-    <!-- ===== SECCIÓN INICIO ===== -->
     <section id="inicio">
       <div class="hero-content">
-        <h1>AeroMaravillas</h1>
-        <p class="hero-subtitulo">
-          La aerolínea oficial de las 7 Maravillas del Mundo.
-        </p>
+        <h1>AeroMaravillas &#9992;</h1>
+        <p class="hero-subtitulo">La aerolínea oficial de las 7 Maravillas del Mundo.</p>
         <p class="hero-descripcion">
-          Salimos desde Quito (UIO) y Guayaquil (GYE) hacia los destinos más
-          extraordinarios del planeta.
+          Salimos desde Quito (UIO) y Guayaquil (GYE) hacia los destinos más extraordinarios del planeta.
         </p>
         <a href="#viajes" class="btn-hero">Ver destinos</a>
       </div>
 
-      <!-- Formulario de búsqueda -->
       <div class="buscador">
         <h2>Buscar un Vuelo</h2>
         <form>
@@ -66,176 +58,39 @@
           </div>
           <div class="form-grupo">
             <label for="pasajeros">Pasajeros</label>
-            <input
-              type="number"
-              id="pasajeros"
-              name="pasajeros"
-              min="1"
-              max="10"
-              value="1"
-            />
+            <input type="number" id="pasajeros" name="pasajeros" min="1" max="10" value="1" />
           </div>
-          <button type="submit" class="btn-buscar">Buscar vuelo</button>
+          <button type="button" class="btn-buscar" onclick="realizarReserva()">Buscar vuelo</button>
         </form>
       </div>
     </section>
 
-    <!-- ===== SECCIÓN VIAJES ===== -->
     <section id="viajes">
       <h2 class="seccion-titulo">Nuestros Destinos</h2>
       <p class="seccion-subtitulo">7 maravillas. 7 experiencias unicas.</p>
-
       <div class="destinos-grid">
-        <!-- Tarjeta 1 -->
         <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/macchu-picchu.jpeg" alt="Machu Picchu" />
-          </div>
+          <div class="tarjeta-imagen"><img src="images/macchu-picchu.jpeg" alt="Machu Picchu" /></div>
           <div class="tarjeta-info">
             <h3>Machu Picchu</h3>
             <p class="pais">Peru</p>
-            <p class="ruta">UIO &rarr; LIM &rarr; CUZ &nbsp;|&nbsp; 9h 30m</p>
-            <p class="frecuencia">Martes y Viernes</p>
-            <p class="descripcion">
-              La ciudad perdida de los incas entre las nubes de los Andes
-              peruanos.
-            </p>
+            <p class="ruta">UIO &rarr; LIM &rarr; CUZ | 9h 30m</p>
             <p class="precio">Desde <span>$180</span></p>
+            <button class="btn-hero" style="width:100%; margin-top:10px" onclick="seleccionarDestino('Machu Picchu')">Reservar</button>
           </div>
         </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/chiche-mexico.jpeg" alt="Chichen Itza" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Chichen Itza</h3>
-            <p class="pais">Mexico</p>
-            <p class="ruta">UIO &rarr; MEX &rarr; MID &nbsp;|&nbsp; 8h 15m</p>
-            <p class="frecuencia">Lunes y Jueves</p>
-            <p class="descripcion">
-              El imponente Templo de Kukulcan, joya de la civilizacion maya.
-            </p>
-            <p class="precio">Desde <span>$320</span></p>
-          </div>
         </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/cristo-redentor.jpeg" alt="Cristo Redentor" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Cristo Redentor</h3>
-            <p class="pais">Brasil</p>
-            <p class="ruta">GYE &rarr; GIG &nbsp;|&nbsp; 5h 45m</p>
-            <p class="frecuencia">Miercoles y Sabado</p>
-            <p class="descripcion">
-              El iconico Cristo de brazos abiertos sobre Rio de Janeiro.
-            </p>
-            <p class="precio">Desde <span>$210</span></p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 4 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/coliseo-roma.jpeg" alt="Coliseo Romano" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Coliseo Romano</h3>
-            <p class="pais">Italia</p>
-            <p class="ruta">UIO &rarr; MAD &rarr; FCO &nbsp;|&nbsp; 14h 20m</p>
-            <p class="frecuencia">Lunes, Miercoles y Viernes</p>
-            <p class="descripcion">
-              El anfiteatro mas grande jamas construido. El corazon de Roma.
-            </p>
-            <p class="precio">Desde <span>$590</span></p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 5 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/tag-mahal.jpeg" alt="Taj Mahal" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Taj Mahal</h3>
-            <p class="pais">India</p>
-            <p class="ruta">UIO &rarr; DXB &rarr; DEL &nbsp;|&nbsp; 22h 10m</p>
-            <p class="frecuencia">Martes y Sabado</p>
-            <p class="descripcion">
-              El mausoleo de marmol blanco en Agra, simbolo eterno del amor.
-            </p>
-            <p class="precio">Desde <span>$750</span></p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 6 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/muralla-china.jpeg" alt="Gran Muralla China" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Gran Muralla China</h3>
-            <p class="pais">China</p>
-            <p class="ruta">UIO &rarr; LAX &rarr; PEK &nbsp;|&nbsp; 20h 50m</p>
-            <p class="frecuencia">Jueves y Domingo</p>
-            <p class="descripcion">
-              Mas de 21,000 km de historia atravesando montanas y desiertos.
-            </p>
-            <p class="precio">Desde <span>$870</span></p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 7 -->
-        <div class="tarjeta">
-          <div class="tarjeta-imagen">
-            <img src="images/petra-jordania.jpeg" alt="Petra" />
-          </div>
-          <div class="tarjeta-info">
-            <h3>Petra</h3>
-            <p class="pais">Jordania</p>
-            <p class="ruta">UIO &rarr; MAD &rarr; AMM &nbsp;|&nbsp; 16h 30m</p>
-            <p class="frecuencia">Miercoles y Sabado</p>
-            <p class="descripcion">
-              La ciudad rosa tallada en roca en el corazon del desierto jordano.
-            </p>
-            <p class="precio">Desde <span>$680</span></p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- ===== SECCIÓN CONTACTO ===== -->
     <section id="contacto">
-      <div class="servicios">
-        <h2 class="seccion-titulo">Servicios a Bordo</h2>
-        <ul class="servicios-lista">
-          <li>Clase Business con asientos lie-flat</li>
-          <li>Menu gourmet internacional</li>
-          <li>Wi-Fi a bordo</li>
-          <li>Guias de viaje personalizadas</li>
-          <li>Seguro de viaje incluido</li>
-          <li>Cambios de fecha sin costo hasta 48h antes</li>
-        </ul>
-      </div>
-
       <div class="contacto-info">
-        <h2 class="seccion-titulo">Contactanos</h2>
-        <div class="contacto-datos">
-          <p><strong>Telefono:</strong> +593 994115408</p>
-          <p><strong>Correo:</strong> info@aeromaravillas.com</p>
-          <p>
-            <strong>Direccion:</strong> Av. 6 de Marzo y Venezuela, Guayaquil,
-            Ecuador
-          </p>
-        </div>
+        <h2 class="seccion-titulo">Contáctanos</h2>
+        <p><strong>Teléfono:</strong> +593 994115408</p>
+        <p><strong>Correo:</strong> info@aeromaravillas.com</p>
+        <p><strong>Dirección:</strong> Av. 6 de Marzo y Venezuela, Guayaquil, Ecuador</p>
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
       <p>&copy; 2026 AeroMaravillas. Todos los derechos reservados.</p>
     </footer>
